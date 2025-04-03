@@ -172,13 +172,12 @@ Regarding the external documentation, it can be published as static documents (e
 <details>
 <summary><strong>Requirement 1: Reuse specification </strong></summary>
 
-Whenever applicable, a search should be conducted for well-known ontologies to identify any existing elements that may be useful to reuse.
+Whenever applicable, a search should be conducted for well-known ontologies to identify any existing elements that may be useful to reuse. 
 
->[!note]
- While it is always advisable to reuse standard well-known ontologies, vocabularies, and/or terminologies, the priority must be to select those that best align with the established requirements of your ontology and meet a minimum quality standard.
+>[!note] While it is always advisable to reuse standard well-known ontologies, vocabularies, and/or terminologies, the priority must be to select those that best align with the established requirements of your ontology and meet a minimum quality standard.
 
 <details><summary><strong>GUIDELINES</strong></summary>
-
+It is recommended to add in an external document a brief explanation describing which and how other ontologies are reused. 
  </details></details>
 
 <details>
@@ -189,6 +188,41 @@ Whenever applicable, a search should be conducted for well-known ontologies to i
 
  </details></details>
 
+#### Principle 7: Format
+> The ontology is available in at least one standard knowledge representation language. 
+
+**Sources**:
+
+###  REQUIREMENTS
+
+<details>
+<summary><strong>Requirement 1: Ontology representation language </strong></summary>
+
+The ontology MUST be encoded and available in one or multiple representation common formal languages.
+
+<details><summary><strong>GUIDELINES</strong></summary>
+In order to decide which representation language you are going to use, it is important to establish what your requirements are regarding the level of expressiveness of the language needed, and the use that you will give to the ontology.  The most common knowledge representation language used for ontologies are:
+
+1) OWL¿2?
+2) RDF(S)
+3) Common logic
+4) SKOS?
+
+>[!note] For ontologies of belonging to the biomedical domain, it is also common to use the OBO format. This is not a formal ontology language but a common format developed by the OBO Foundry to represent in a more human-readable manner although with less expressivity than OWL. 
+
+OWL and RDF(S) can be serialized in multiple well-know syntaxis such as:
+- Turtle
+- N-triples
+- RDF/XML
+- JSON-LD
+
+ There is a wide range of tools that allows you to encode and export the ontology in those formats:
+- Protégé
+- Chowlk
+- Ontology Development Kit
+- VocBench
+- Fluent Editor
+ </details></details>
 
 
 
