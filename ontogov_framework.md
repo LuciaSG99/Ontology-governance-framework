@@ -1,5 +1,7 @@
 # Ontology governance framework
 
+*A Structured Approach to Ontology Governance:
+Harmonizing Existing Practices*
 
 EXPLANATION OF HOW THE FRAMEWORK WORKS: Categories, subcategories, definitions, elements.
 
@@ -19,9 +21,11 @@ EXPLANATION OF HOW THE FRAMEWORK WORKS: Categories, subcategories, definitions, 
 
 [PRINCIPLE 6 - (RE)USABILITY](#principle-6-reusability)
 
-[PRINCIPLE 7 - (RE)USABILITY](#principle-7-modularity)
+[PRINCIPLE 7 - MODULARITY](#principle-7-modularity)
 
 [PRINCIPLE 8 - FORMAT](#principle-8-format)
+
+
 
 ## CONTEXTUALIZATION
 
@@ -81,6 +85,7 @@ The scope of the ontology should be narrow and small enough to support modularit
 </details>
 
 <details><summary><strong>Requirement 2: Statement of the scope</strong></summary>
+
 This scope has to be clearly and briefly stated, in any "manifestation" of the ontology. 
 
 <details><summary><strong>GUIDELINES</strong></summary>
@@ -188,7 +193,33 @@ It is recommended to add in an external document a brief explanation describing 
 
  </details></details>
 
-#### Principle 7: Format
+ #### Principle 7: Modularity
+> 
+
+**Sources**:
+
+###  REQUIREMENTS
+
+<details>
+<summary><strong>Requirement 1: Reuse specification </strong></summary>
+
+Whenever applicable, a search should be conducted for well-known ontologies to identify any existing elements that may be useful to reuse. 
+
+>[!note] While it is always advisable to reuse standard well-known ontologies, vocabularies, and/or terminologies, the priority must be to select those that best align with the established requirements of your ontology and meet a minimum quality standard.
+
+<details><summary><strong>GUIDELINES</strong></summary>
+It is recommended to add in an external document a brief explanation describing which and how other ontologies are reused. 
+ </details></details>
+
+<details>
+<summary><strong>Requirement 2: Instructions for reuse </strong></summary>
+
+
+<details><summary><strong>GUIDELINES</strong></summary>
+
+ </details></details>
+
+#### Principle 8: Format
 > The ontology is available in at least one standard knowledge representation language. 
 
 **Sources**:
