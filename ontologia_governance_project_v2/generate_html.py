@@ -17,7 +17,7 @@ Fecha: Abril 2025
 import argparse
 import json
 import os
-import pandas as pd
+import pandas as pd # type: ignore
 import re
 from datetime import datetime
 
@@ -139,7 +139,7 @@ function exportToPDF() {
                     requirementCounter++;
                     
                     // Añadir guías
-                    addParagraph(`Guías: ${requirement.guidelines}`);
+                    addParagraph(`Guidelines: ${requirement.guidelines}`);
                 }
             });
         }
@@ -192,7 +192,7 @@ function exportToPDF() {
     }
     
     // Guardar el PDF
-    doc.save('modelo_gobernanza_ontologias.pdf');
+    doc.save('ontology_governance_framework.pdf');
 }
 """
 
@@ -528,7 +528,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
                     const guidelines = document.createElement('div');
                     guidelines.className = 'guidelines';
                     guidelines.innerHTML = `
-                        <h4>Guías:</h4>
+                        <h4>Guidelines:</h4>
                         <p>${{requirement.guidelines.replace(/\\n/g, '<br>')}}</p>
                     `;
                     
@@ -773,7 +773,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
                     if (isRequirementSelected) {{
                         hasSelectedRequirements = true;
                         requirementsMarkdown += `## ${{requirement.name}}\\n\\n`;
-                        requirementsMarkdown += `### Guías:\\n${{requirement.guidelines}}\\n\\n`;
+                        requirementsMarkdown += `### Guidelines:\\n${{requirement.guidelines}}\\n\\n`;
                     }}
                 }});
                 
@@ -788,7 +788,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
             const url = URL.createObjectURL(blob);
             const a = document.createElement('a');
             a.href = url;
-            a.download = 'modelo_gobernanza_ontologias.md';
+            a.download = 'ontology_governance_framework.md';
             document.body.appendChild(a);
             a.click();
             document.body.removeChild(a);
@@ -841,7 +841,7 @@ def process_excel(excel_path):
         required_columns = ['Principle', 'Requirement', 'Guidelines']
         for col in required_columns:
             if col not in df.columns:
-                raise ValueError(f"El archivo Excel no contiene la columna '{col}'")
+                raise ValueError(f"The excel doesn't have column '{col}'")
         
         # Procesar los datos
         governance_model = []
@@ -881,7 +881,7 @@ def process_excel(excel_path):
         return governance_model
     
     except Exception as e:
-        print(f"Error al procesar el archivo Excel: {str(e)}")
+        print(f"Error processing the excel file: {str(e)}")
         raise
 
 def generate_html(excel_path, output_path):
@@ -913,24 +913,24 @@ def generate_html(excel_path, output_path):
         with open(output_path, 'w', encoding='utf-8') as f:
             f.write(html_content)
         
-        print(f"HTML generado correctamente en: {output_path}")
+        print(f"HTML generated in: {output_path}")
         return True
     
     except Exception as e:
-        print(f"Error al generar el HTML: {str(e)}")
+        print(f"Error generating the HTML: {str(e)}")
         return False
 
 def main():
     """Función principal del script."""
-    parser = argparse.ArgumentParser(description='Generador de HTML para Modelo de Gobernanza de Ontologías')
-    parser.add_argument('--input', '-i', required=True, help='Ruta al archivo Excel')
-    parser.add_argument('--output', '-o', default='index.html', help='Ruta donde se guardará el HTML generado (por defecto: index.html)')
+    parser = argparse.ArgumentParser(description='Generator of HTML for Ontology Governance Framework')
+    parser.add_argument('--input', '-i', required=True, help='Path to excel file')
+    parser.add_argument('--output', '-o', default='index.html', help='Path to save the HTML generated (by default: index.html)')
     
     args = parser.parse_args()
     
     # Verificar que el archivo Excel existe
     if not os.path.isfile(args.input):
-        print(f"Error: El archivo {args.input} no existe")
+        print(f"Error: File {args.input} doesn't exist")
         return 1
     
     # Generar el HTML
