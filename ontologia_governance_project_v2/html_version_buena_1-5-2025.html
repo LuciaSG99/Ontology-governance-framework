@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Ontology Governance Design Platform</title>
+  <title>Ontology Governance Viewer</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -71,7 +71,7 @@
   </style>
 </head>
 <body>
-  <h1>Design your own ontology governance framework!</h1>
+  <h1>Ontology Governance Model</h1>
   <div class="metadata-form" style="margin-bottom: 30px;">
     <label><strong>Project name:</strong>
         <input type="text" id="project-name-input" placeholder="Enter project name" style="width: 100%; padding: 8px; margin-top: 5px; margin-bottom: 10px;">
@@ -100,7 +100,7 @@
 </div>
   <div id="content"></div>
   <footer>
-    <p>Authors: "Lucia Sanchez Gonzalez, Maria Poveda Villalon, and Oscar Corcho"</p>
+    <p>Authors: Lucia Sanchez Gonzalez, Maria Poveda Villalon, and Oscar Corcho</p>
     <p>License: <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License 2.0</a></p>
     <p>How to cite: "Ontology Governance Framework". April 2025. DOI: ontology-framework</p
   </footer>
@@ -205,13 +205,12 @@
     document.addEventListener("DOMContentLoaded", render);
   </script>
 
-<!-- Export Button -->
+<!-- Export Buttons -->
 <div style="margin-top: 30px;">
   <button onclick="exportToMarkdown()">Export to Markdown</button>
   </div>
 
-  <!-- Function to collected the elements selected -->
-<script> 
+<script>
   function getSelectedContent() {
     let output = "";
     document.querySelectorAll('.principle').forEach(p => {
@@ -247,6 +246,66 @@
     link.click();
   }
 
+  
+</script>
+
+
+<script>
+// Función para exportar a Markdown lo seleccionado
+function exportToMarkdown() {
+  let markdown = '';
+  const principles = document.querySelectorAll('.principle');
+
+  principles.forEach(principle => {
+    const principleCheckbox = principle.querySelector('.principle-header input[type="checkbox"]');
+    if (principleCheckbox.checked) {
+      const principleTitle = principle.querySelector('.principle-header span').textContent.trim();
+      const principleText = principle.querySelector('.principle-content > p')?.textContent.trim() || '';
+      markdown += `# ${principleTitle}\n\n${principleText}\n\n`;
+
+      const requirements = principle.querySelectorAll('.requirement');
+      requirements.forEach(requirement => {
+        const reqCheckbox = requirement.querySelector('.requirement-header input[type="checkbox"]');
+        if (reqCheckbox.checked) {
+          const reqTitle = requirement.querySelector('.requirement-header span').textContent.trim();
+          const reqText = requirement.querySelector('.requirement-content > p')?.textContent.trim() || '';
+          markdown += `## ${reqTitle}\n\n${reqText}\n\n`;
+
+          const guidelines = requirement.querySelectorAll('.guideline');
+          guidelines.forEach(guide => {
+            const gCheckbox = guide.querySelector('.requirement-header input[type="checkbox"]');
+            if (gCheckbox.checked) {
+              const gTitle = guide.querySelector('.requirement-header span').textContent.trim();
+              const gText = guide.querySelector('.guideline-content > p')?.textContent.trim() || '';
+              markdown += `### ${gTitle}\n\n${gText}\n\n`;
+            }
+          });
+        }
+      });
+    }
+  });
+
+  if (markdown === '') {
+    alert("Please select at least one item to export.");
+    return;
+  }
+
+  // Crear un archivo y disparar su descarga
+  const blob = new Blob([markdown], { type: 'text/markdown;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "governance_model.md";
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+// Botón de exportación
+// const exportBtn = document.createElement("button");
+exportBtn.textContent = "Export to Markdown";
+exportBtn.style.margin = "20px 0";
+exportBtn.onclick = exportToMarkdown;
+document.body.insertBefore(exportBtn, document.getElementById("content"));
 </script>
 
 </body>
