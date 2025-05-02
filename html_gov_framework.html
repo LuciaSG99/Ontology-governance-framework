@@ -239,14 +239,34 @@
   }
 
   function exportToMarkdown() {
-    const text = getSelectedContent();
-    const blob = new Blob([text], { type: 'text/markdown' });
+    const projectName = document.getElementById("project-name-input").value.trim();
+    const description = document.getElementById("project-description-input").value.trim();
+    const version = document.getElementById("version-input").value.trim();
+    const authors = document.getElementById("authors-input").value.trim();
+    const ontologies = document.getElementById("ontologies-input").value.trim();
+    const organization = document.getElementById("organization-input").value.trim();
+    const contact = document.getElementById("contact-input").value.trim();
+    const license = document.getElementById("license-input").value.trim();
+
+    let metadata = `# Project Metadata\n\n`;
+    if (projectName) metadata += `**Project name:** ${projectName}\n\n`;
+    if (description) metadata += `**Description:** ${description}\n\n`;
+    if (version) metadata += `**Version:** ${version}\n\n`;
+    if (authors) metadata += `**Authors:** ${authors}\n\n`;
+    if (ontologies) metadata += `**Ontologies applied:** ${ontologies}\n\n`;
+    if (organization) metadata += `**Organization:** ${organization}\n\n`;
+    if (contact) metadata += `**Contact:** ${contact}\n\n`;
+    if (license) metadata += `**License:** ${license}\n\n`;
+
+    const content = getSelectedContent();
+    const finalText = metadata + content;
+
+    const blob = new Blob([finalText], { type: 'text/markdown' });
     const link = document.createElement('a');
     link.href = URL.createObjectURL(blob);
     link.download = 'selected_governance_model.md';
     link.click();
   }
-
 </script>
 
 </body>
