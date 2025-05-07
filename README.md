@@ -24,7 +24,7 @@ The interactive viewer supports selection of relevant elements, metadata input, 
 
 The governance model is defined in JSON format and embedded directly in the HTML viewer. It is structured hierarchically as:
 
-![Example of structure of the framework](./images/example_structure_framework .png)
+![Example of structure of the framework](/images/example_structure_framework .png)
 
 - **Principles** → **Requirements** → **Guidelines**
 
