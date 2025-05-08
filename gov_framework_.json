@@ -1,12 +1,12 @@
 [
   {
     "principle_id": "P1",
-    "principle_name": "P1 - Availability.",
+    "principle_name": "P1 - Availability",
     "text_principle": "The ontology and its components (e.g., code, documentation, etc.) are available for access and consumption by the intended target users, including both humans and machines.",
     "requirements": [
       {
         "requirement_id": "R1.1",
-        "requirement_name": "R1.1 Location of the resources.",
+        "requirement_name": "R1.1 Location of the resources",
         "requirement_text": "To ensure the availability of the ontology and all its resources, it is essential to clearly define where the ontology is hosted and where it is published:\n\n- Hosting refers to the platform or infrastructure where the ontology and related assets (e.g. documentation, metadata) are stored, maintained, and updated by its authors.\n- Publication refers to the means by which the ontology is made accessible and discoverable by target users, both humans and machines.",
         "guidelines": [
           {
@@ -28,7 +28,7 @@
       },
       {
         "requirement_id": "R1.2",
-        "requirement_name": "R1.2 Licensing conditions.",
+        "requirement_name": "R1.2 Licensing conditions",
         "requirement_text": "It MUST be explicitly stated what terms and conditions apply to the access and use of the ontology and its associated resources (e.g., code, documentation).\n\nClear licensing ensures that users understand whether, how, and under what conditions they can use, modify, or redistribute the ontology. This information should be easy to find and written in a standard, machine-readable format whenever possible.",
         "guidelines": [
           {
@@ -47,13 +47,13 @@
   },
   {
     "principle_id": "P2",
-    "principle_name": "P2 - Scope.",
-    "text_principle": "P2 - Scope.\n\nOntologies are expected to have a clearly defined scope, ensuring aligment between their content and purpose. A well-scoped ontology facilitates its discovery and reuse. It should be specific enough to represent its intended domain while remaining flexible enough to support its extension.",
+    "principle_name": "P2 - Scope",
+    "text_principle": "Ontologies are expected to have a clearly defined scope, ensuring aligment between their content and purpose. A well-scoped ontology facilitates its discovery and reuse. It should be specific enough to represent its intended domain while remaining flexible enough to support its extension.",
     "requirements": [
       {
         "requirement_id": "R2.1",
-        "requirement_name": "R2.1 Scope statement.",
-        "requirement_text": "R2.1 Scope statement.\n\nThe scope of the ontology MUST be clearly defined and documented in all the ontology's manifestation (code, documentation, etc.). The ontology title and description should reflect the defined scope to facilitate discovery and selection by the target users.",
+        "requirement_name": "R2.1 Scope statement",
+        "requirement_text": "The scope of the ontology MUST be clearly defined and documented in all the ontology's manifestation (code, documentation, etc.). The ontology title and description should reflect the defined scope to facilitate discovery and selection by the target users.",
         "guidelines": [
           {
             "guideline_id": "G2.1.1",
@@ -71,12 +71,12 @@
   },
   {
     "principle_id": "P3",
-    "principle_name": "P3 - Documentation.",
+    "principle_name": "P3 - Documentation",
     "text_principle": "Human-readable documentation contributes to promote the transparency, traceability, and understandability of ontologies. This documentation enables diverse users to understand the ontology's content, context and its evolution across its lifecycle.",
     "requirements": [
       {
         "requirement_id": "R3.1",
-        "requirement_name": "R3.1 Embedded documentation.",
+        "requirement_name": "R3.1 Embedded documentation",
         "requirement_text": "The ontology MUST include embedded documentation through metadata and annotations, expressed directly in the ontology code.\n\nThis documentation should be provided at two complementary levels:\n\n 1. Ontology-level metadata (applies to the whole ontology). The metadata allows to gather and show more information about the context of the ontology. More information can be found in Principle 4 - Metadata. The minimum that should be included for documeting the ontology is: \n\n \n\n- Ontology name\n\n- Ontology main namespace URI \n\n- Ontology preferred prefix: A recommended prefix established by the authors to used by other users when using their ontology. \n\n- Ontology creator(s): To provide credit to the people who created the ontology. \n\n- Ontology contributor(s): To credit people who contribute in the ontology development, even if they didn't have a highly important role.\n\n- License and Copyrights rights: Indicate the conditions of (re)use of the ontology (see Principle 1 - Availability, Requirement 1 Location of the resources).\n\n- Version IRI of the ontology (see Principle 10 - Maintenance): The IRI that identifies the current version of the ontology.\n\n- Scope and description of the ontology (see Principle 2 - Scope)\n\n2. Term-level annotations (applies to individual classes and properties): Users should be able to understand all the elements of the ontology in general but also individually. For that, each element MUST have: \n\n \n\n- A label: A descriptive and (if possible) unique name asigned to each term. \n\n- A textual definition: Natural language definition that facilitates the understanding of the notion. These are recommended to be unique within the ontology, and they should be avoid ambiguousity. It is also recommended that the individual name of each element must not be used in the definition itself.",
         "guidelines": [
           {
@@ -93,7 +93,7 @@
       },
       {
         "requirement_id": "R3.2",
-        "requirement_name": "R3.2 External documentation.",
+        "requirement_name": "R3.2 External documentation",
         "requirement_text": "In addition to the embedded metadata, external human-readable documentation MUST be created and provided to describe the ontology's context, usage and maintenance:\n\n- A document describing the all the terms of the ontology. This is a file that collects all the terms documentation embedded in the ontology and that also contains additional information like the scope of the ontology and examples of usage.\n\n- Use cases/user stories: Examples describing how and by whom the ontology is intended to be used, explaining which data is going to be represented.\n\n- Requirements: The document detailing both functional (e.g., a list of Competency Questions) and the non-functional requirements (e.g., the language of the ontology, licesing conditions).\n\n- Diagrams: Visual representation of the ontology. A common notation should be used to represent the different elements of the ontology.\n\n- Examples of usage:  Illustrative examples that show how ontology classes and properties are instantiated with real or synthetic individuals. These examples help demonstrate the ontology's structure and its application to model actual data.\n\n- SPARQL queries: example queries to show how the ontology can be queried and used.\n\n- Guidelines and instructions for maintenance (see Principle 10 - Maintenance)",
         "guidelines": [
           {
@@ -107,12 +107,12 @@
   },
   {
     "principle_id": "P4",
-    "principle_name": "P4 - Metadata.",
+    "principle_name": "P4 - Metadata",
     "text_principle": "The ontology is made findable and traceable through its metadata, which helps users identify and interpret its context.",
     "requirements": [
       {
         "requirement_id": "R4.1",
-        "requirement_name": "R4.1 Metadata at whole ontology level.",
+        "requirement_name": "R4.1 Metadata at whole ontology level",
         "requirement_text": "The ontology MUST include a minimal set of metadata annotations at the ontology level to ensure its discoverability, identification, and contextualization across systems. This metadata allows users and machines to retrieve and interpret the ontology in a standardized way. The minimum metadata recommeded is:\n\n1) Ontology identification and description:\n\n- Ontology name\n\n- Ontology main namespace URI \n\n- Ontology preferred prefix: A recommended prefix established by the authors to used by other users when using their ontology. \n\n- Scope and description of the ontology (see Principle 2 - Scope)\n\n2) Attribution:\n\n- Ontology creator(s): To provide credit to the people who created the ontology. \n\n- Ontology contributor(s): To credit people who contribute in the ontology development, even if they didn't have a highly important role.\n\n- License and Copyrights rights: Indicate the conditions of (re)use of the ontology (see Principle 1 - Availability, Requirement 1 Location of the resources).\n\n- Citation: Indicate a way to cite the ontology. \n\n3) Versioning: \n\n- Version IRI of the ontology (see Principle 10 - Maintenance): The IRI that identifies the current version of the ontology.",
         "guidelines": [
           {
@@ -124,7 +124,7 @@
       },
       {
         "requirement_id": "R4.2",
-        "requirement_name": "R4.2 Metadata at term level. ",
+        "requirement_name": "R4.2 Metadata at term level",
         "requirement_text": "Each term in the ontology MUST include a set of metadata annotations to ensure it can be identified, understood, and reused:\n\n- A label: A descriptive and (if possible) unique human-readable name asigned to each term. \n\n- A textual definition: Natural language definition that facilitates the understanding of the notion. These are recommended to be unique within the ontology, and they should be avoid ambiguousity. It is also recommended that the individual name of each element must not be used in the definition itself\n\n- Definition source: If applicable, when the definition is extracted or adapted from another source\n\n- Reuse source: If the term is reused from another ontology or vocabulary, provide the URI of the original resource \n\n- Examples: Show examples of how the term is used in practice",
         "guidelines": [
           {
@@ -138,12 +138,12 @@
   },
   {
     "principle_id": "P5",
-    "principle_name": "P5 - Identifiers.",
+    "principle_name": "P5 - Identifiers",
     "text_principle": "The ontology follows a clear designing policy for the creation and management of identifiers.",
     "requirements": [
       {
         "requirement_id": "R5.1",
-        "requirement_name": "R5.1 Ontology and terms IRI.",
+        "requirement_name": "R5.1 Ontology and terms IRI",
         "requirement_text": "The ontology MUST be assigned a unique and persistent IRI to ensure its long-term accessibility. This IRI typically serves as the base for constructing the IRIs of all terms defined within the ontology.",
         "guidelines": [
           {
@@ -160,7 +160,7 @@
       },
       {
         "requirement_id": "R5.2",
-        "requirement_name": "R5.2 Ontology versions.",
+        "requirement_name": "R5.2 Ontology versions",
         "requirement_text": "Ontology development is an iterative process in which multiple versions of the ontology are created and released. Each official version of the ontology MUST be assigned a specific and persistent IRI to ensure that users can access and cite any past version. The base ontology IRI MUST resolve to the latest available version of the ontology.\n\nTo do so, the ontology authors MUST define a versioning policy, including the pattern used to construct version-specific IRIs.",
         "guidelines": [
           {
@@ -172,7 +172,7 @@
       },
       {
         "requirement_id": "R5.3",
-        "requirement_name": "R5.3 Naming convention.",
+        "requirement_name": "R5.3 Naming convention",
         "requirement_text": "The identifiers of all terms within the ontology (e.g., classes, properties, individuals), if possible, MUST be unique to avoid ambiguity and ensure clear interpretation. To support consistency and maintainability, the ontology MUST adopt a naming convention policy that defines how term identifiers are constructed.",
         "guidelines": [
           {
@@ -191,12 +191,12 @@
     "requirements": [
       {
         "requirement_id": "R6.1",
-        "requirement_name": "R6.1 Reuse of existing ontologies.",
+        "requirement_name": "R6.1 Reuse of existing ontologies",
         "requirement_text": "When applicable, ontology developers MUST evaluate and reuse existing, well-established ontologies, vocabularies, or terminologies that align with the defined requirements of their ontology. Note: While it is always advisable to reuse standard well-known ontologies, vocabularies, and/or terminologies, the priority must be to select those that best align with the established requirements of your ontology and meet a minimum quality standard.",
         "guidelines": [
           {
             "guideline_id": "G6.1.1",
-            "guideline_name": "G6.1.1 How to select ontologies for reuse? ",
+            "guideline_name": "G6.1.1 How to select ontologies for reuse?",
             "guideline_text": "Before reusing existing ontologies, it is important to define what you are looking for and establish a clear selection process. The following steps can guide this activity:\n\n1) Draft a preliminary model\n\nIt is highly recommended to begin by gathering and documenting the requirements of your ontology. Then, create an initial conceptual draft that includes the main concepts you aim to represent. This early modeling step helps identify which elements may benefit from reuse.\n\n2) Search for existing resources\n\nOnce you know the types of concepts you might want to reuse, search in dedicated platforms and sources:\n\n- Ontology portals and catalogues: These platforms aggregate and publish ontologies, often offering tools to support discovery and reuse. Some are general-purpose (e.g.,  <a href='https://lov.linkeddata.es/dataset/lov' target='_blank'>Linked Open Vocabularies (LOV)</a>.), while others are domain-specific (e.g., <a href='https://agroportal.lirmm.fr/' target='_blank'>AgroPortal</a> for agriculture).\n\n- Scientific articles: Many ontologies are accompanied by academic publications. Searching bibliographic databases like Scopus, Web of Science, or Semantic Scholar may lead to detailed documentation and background.\n\n- Project-specific websites: Some ontologies are developed within the scope of specific projects and published through their official websites to increase visibility.\n\nExample: <a href='https://bimerr.iot.linkeddata.es/' target='_blank'>BIMERR</a> ontologies.\n\n- Open repositories: General-purpose repositories such as Zenodo or <a href='https://github.com/' target='_blank'>GitHub</a> are also commonly used to publish ontology files and associated documentation.\n\n3) Define your selection criteria\n\nGiven the vast number of existing ontologies, it is essential to establish criteria for evaluating their suitability:\n\n- Does it align with the scope and requirements of your ontology?\n\n- How well does it cover the domain you are modeling?\n\n- Is the expressivity and implementation language compatible with your own?\n\n- Is it licensed under open or clearly defined reuse terms?\n\n- Is it actively maintained (e.g., issue tracking, multiple versions)?\n\n- Is it supported by comprehensive and accessible documentation?\n\nFinally, if the authors are interested in publishing a scientific paper or report about the development of the ontology, in line with Principle 3 – Documentation, it is important to keep track of: 1) Where did you search for ontologies to reused, 2) Which ones were evaluated, 3) and what are the elements you are going to reused."
           },
           {
@@ -210,12 +210,12 @@
   },
   {
     "principle_id": "P7",
-    "principle_name": "P7 -  Modularity.",
+    "principle_name": "P7 -  Modularity",
     "text_principle": "To facilitate maintenance and reusability, ontologies are modularized whenever possible. A single reference ontology is developed to cover a specific domain of knowledge. This ontology functions as an independent module, while also being able to integrate with other modules that, together, form a coherent network of ontologies.",
     "requirements": [
       {
         "requirement_id": "R7.1",
-        "requirement_name": "R7.1 Scope and coverage.",
+        "requirement_name": "R7.1 Scope and coverage",
         "requirement_text": "To support modular ontology development and prevent overlapping, the scope and coverage of each module MUST be clearly defined from the beginning of the ontology design process. This facilitates the identification of independent but complementary modules and ensures that each one contributes to a coherent and non-redundant ontology network.",
         "guidelines": []
       }
@@ -223,12 +223,12 @@
   },
   {
     "principle_id": "P8",
-    "principle_name": "P8 - Format ",
+    "principle_name": "P8 - Format",
     "text_principle": "The ontology is made available in at least one standard knowledge representation language, to ensure its interpretability and interoperability by tools, systems, and users.",
     "requirements": [
       {
         "requirement_id": "R8.1",
-        "requirement_name": "R8.1 Ontology language.",
+        "requirement_name": "R8.1 Ontology language",
         "requirement_text": "The ontology MUST be encoded and made available in one or more standard formal representation languages",
         "guidelines": [
           {
@@ -242,7 +242,7 @@
   },
   {
     "principle_id": "P9",
-    "principle_name": "P9 - Adoption.",
+    "principle_name": "P9 - Adoption",
     "text_principle": "To ensure the impact and relevance of an ontology, its adoption by the intended users is actively promoted and monitored.",
     "requirements": [
       {
@@ -259,7 +259,7 @@
       },
       {
         "requirement_id": "R9.2",
-        "requirement_name": "R9.2 Adoption by community.",
+        "requirement_name": "R9.2 Adoption by community",
         "requirement_text": "There SHOULD be a set of indicators that demonstrate the ontology is being used by its intended community. These indicators not only reflect the level of adoption, but can also serve for assessing the ontology’s quality.",
         "guidelines": [
           {
@@ -273,12 +273,12 @@
   },
   {
     "principle_id": "P10",
-    "principle_name": "P10 - Maintenance.",
+    "principle_name": "P10 - Maintenance",
     "text_principle": "To ensure the long-term relevance, accuracy, and usability of an ontology, its resources are regularly reviewed and updated to incorporate new requirements, corrections, and improvements.",
     "requirements": [
       {
         "requirement_id": "R10.1",
-        "requirement_name": "R10.1 Ontology evolution.",
+        "requirement_name": "R10.1 Ontology evolution",
         "requirement_text": "Ontologies are not static resources, they evolve over time to incorporate new requirements, correct errors, and adapt to changing knowledge domains. To manage this process effectively, ontology owners MUST define a clear evolution strategy. This includes establishing guidelines and procedures for managing changes, documenting decisions, and involving stakeholders.",
         "guidelines": [
           {
@@ -290,7 +290,7 @@
       },
       {
         "requirement_id": "R10.2",
-        "requirement_name": "R10.2 Users communication.",
+        "requirement_name": "R10.2 Users communication",
         "requirement_text": "There MUST be defined communication channels to facilitate the interaction between the ontology owners and its users or community. These channels enable users to report issues, request changes, or provide feedback, and allow ontology owners to notify users about updates, new releases, or important decisions.",
         "guidelines": [
           {
@@ -302,7 +302,7 @@
       },
       {
         "requirement_id": "R10.3",
-        "requirement_name": "R10.3 Versioning.",
+        "requirement_name": "R10.3 Versioning",
         "requirement_text": "A versioning protocol is essential to ensure the traceability and long-term management of the ontology. It allows both users and maintainers to track the evolution of the ontology across time. For that, ontology owners MUST define a clear versioning strategy that includes:\n\n- The use of unique and persistent identifiers (IRIs) to each released version (see Principle 5 – Identifiers).\n\n- The storage and accessibility of versioned files, ensuring that each version remains available even after new versions are released.",
         "guidelines": [
           {
@@ -314,12 +314,12 @@
       },
       {
         "requirement_id": "R10.4",
-        "requirement_name": "R10.4 Contribution/Collaboration guidelines.",
+        "requirement_name": "R10.4 Contribution guidelines",
         "requirement_text": "If the ontology is open to external contributions, the ontology owners MUST provide clear and accessible guidelines for collaboration. These guidelines ensure that contributions are well-managed and align with the ontology’s objectives.",
         "guidelines": [
           {
             "guideline_id": "G10.4.1",
-            "guideline_name": "G10.4.1 Contribution guidelines ",
+            "guideline_name": "G10.4.1 Contribution guidelines",
             "guideline_text": "The contribution guidelines should explain how external users and stakeholders can participate in the maintenance and evolution of the ontology. The recommended elements to include are:\n\n1) Contribution scope - Clarify the types of contributions that are welcomed. These may include:\n\n- Reviewing and suggesting edits to class or property definitions\n\n- Proposing new terms or modifications\n\n- Contributing to documentation or examples\n\n- Reporting issues or inconsistencies\n\n-Proposal of new use cases\n\n2) Processes and communication channels - Explain the procedures contributors should follow for each type of input. For example:\n\n- Technical feedback might be submitted via issue trackers (e.g., <a href='https://github.com/' target='_blank'>GitHub</a> Issues)\n\n- General suggestions or community feedback might be collected via online forms or mailing lists\n\nSee example: The (<a href='https://github.com/edmcouncil/fibo' target='_blank'>Financial Industry Business Ontology (FIBO)</a>) provides a CONTRIBUTING.md file in its GitHub repository outlining how community members can participate."
           }
         ]
