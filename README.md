@@ -44,7 +44,7 @@ These metadata are also included in the exported Markdown file.
 
 ## How to use the tool
 
-1. You can use the app directly going to our **GitHub pages**: https://luciasg99.github.io/Ontology-governance-framework/ or you can download the HTML file **"index.html"** and use the app locally (since the framework is already embedded in the HTML).
+1. You can use the app directly going to our **GitHub pages**: https://oeg-upm.github.io/Ontology-governance-framework/ or you can download the HTML file **"index.html"** and use the app locally (since the framework is already embedded in the HTML).
 2. **Enter your metadata** in the form at the top of the page.
 3. **Navigate the framework** using the collapsible elements for each principle, requirement, and guideline.
 4. **Select** the elements you want to include in your documentation using the checkboxes.
