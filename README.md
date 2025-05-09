@@ -52,8 +52,7 @@ These metadata are also included in the exported Markdown file.
    - The project metadata
    - Only the selected governance elements
 
-[!WARNING] 
-The tool forces the hierarchy of elements in the frameworks to be followed. Therefore, if the requirements or guidelines are selected without having selected their parent elements (the corresponding principles and requirements), these elements will not be exported and will not be seen in the markdown file. For example, if Principle 1 and Guide G3.1.1 are selected, only Principle 1 will be seen in the markdown file. To see the G3.1.1, you need to select also Principle 3 and Requirement R.3.1.
+> ⚠️ WARNING! The tool forces the hierarchy of elements in the frameworks to be followed. Therefore, if the requirements or guidelines are selected without having selected their parent elements (the corresponding principles and requirements), these elements will not be exported and will not be seen in the markdown file. For example, if Principle 1 and Guide G3.1.1 are selected, only Principle 1 will be seen in the markdown file. To see the G3.1.1, you need to select also Principle 3 and Requirement R.3.1.
 
 ---
 
