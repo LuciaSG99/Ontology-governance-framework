@@ -1,4 +1,149 @@
-[
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ontology Governance Framework Designing Tool</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      padding: 20px;
+    }
+    .principle {
+      background: white;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      margin-bottom: 20px;
+      padding: 15px;
+    }
+    .principle-header {
+      font-weight: bold;
+      background-color: #2c3e50;
+      color: white;
+      padding: 10px;
+      cursor: pointer;
+      border-radius: 4px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .requirement-header {
+      font-weight: bold;
+      background-color: #3498db;
+      color: white;
+      padding: 10px;
+      cursor: pointer;
+      border-radius: 4px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .requirement {
+      margin-top: 10px;
+      padding-left: 20px;
+    }
+    .requirement-content, .guideline-content {
+      display: none;
+      padding: 10px;
+      background: #f0f0f0;
+      margin-top: 5px;
+      border-radius: 4px;
+      white-space: pre-wrap; 
+    }
+    .guideline {
+      margin-top: 10px;
+    }
+    .guideline .requirement-header {
+      background-color: #bdc3c7;
+      color: #2c3e50;
+    }
+    .checkbox-container {
+      margin-right: 10px;
+    }
+    .arrow {
+      transition: transform 0.3s;
+    }
+    .rotated {
+      transform: rotate(180deg);
+    }
+  </style>
+</head>
+<body>
+  <h1>Design your own ontology governance framework!</h1>
+  <h3>🛠️ How to Use This Tool</h3>
+  <p>This platform helps you design your own ontology governance framework based on a set of harmonized governance elements.</p>
+
+  <h3>✅ Step 1 – Add Metadata (Optional)</h3>
+  <p>At the beginning of the page, you can add metadata for your framework, such as:
+    <ul>
+      <li>Project name</li>
+      <li>Version</li>
+      <li>Authors</li>
+      <li>License</li>
+      <li>Description</li>
+    </ul>
+    This metadata will be included in the exported file.
+  </p>
+
+  <h3>✅ Step 2 – Explore the Categories</h3>
+  <p>The framework is organized into <strong>10 key categories</strong> of the ontology lifecycle (e.g., Availability, Documentation, Maintenance). Each category includes one <strong>Principle</strong>, which may have one or more <strong>Requirements</strong>, and each requirement is supported by one or more <strong>Guidelines</strong>.</p>
+
+  <h3>✅ Step 3 – Select the Governance Elements</h3>
+  <p>Use the dropdown sections to explore each category. You can select:
+    <ul>
+      <li><strong>Principles</strong> – Foundational ideas that guide the decision-making process throughout the ontology lifecycle.</li>
+      <li><strong>Requirements</strong> – Conditions and statements that express a need and must
+        be fulfilled to comply with the principles.</li>
+      <li><strong>Guidelines</strong> – Group of recommendations and methodological suggestions to
+        support the development of the resource based on the principles and requirements established in the first place.</li>
+    </ul>
+  </p>
+  <p><strong>WARNING! </strong> A Guideline can only be selected if its Requirement and Principle are also selected. Similarly, a Requirement depends on its principle. If for example, a Requirement is selected without selecting its Principle, then it won't be included in the file exported. This ensures logical consistency in your governance model.</p>
+
+  <h3>✅ Step 4 – Export Your Governance Framework</h3>
+  <p>Click the <strong>Export to Markdown</strong> button to download your personalized governance framework.</p>
+  
+  <div class="metadata-form" style="margin-bottom: 30px;">
+    <h2>Insert your Metadata</h2>
+    <label><strong>Project name:</strong>
+        <input type="text" id="project-name-input" placeholder="Enter project name" style="width: 100%; padding: 8px; margin-top: 5px; margin-bottom: 10px;">
+    </label><br>
+    <label><strong>Description:</strong><br>
+        <textarea id="project-description-input" placeholder="Brief description of the project..." style="width: 100%; height: 80px; margin-top: 5px; margin-bottom: 10px;"></textarea>
+    </label><br>
+    <label><strong>Version:</strong>
+        <input type="text" id="version-input" placeholder="e.g. v1.0" style="width: 100%; padding: 8px; margin-bottom: 10px;">
+    </label><br>
+    <label><strong>Authors:</strong>
+        <input type="text" id="authors-input" placeholder="Enter author names" style="width: 100%; padding: 8px; margin-bottom: 10px;">
+    </label><br>
+    <label><strong>Ontologies applied:</strong>
+        <input type="text" id="ontologies-input" placeholder="Enter ontology names" style="width: 100%; padding: 8px; margin-bottom: 10px;">
+    </label><br>
+    <label><strong>Organization:</strong>
+        <input type="text" id="organization-input" placeholder="Institution or group name" style="width: 100%; padding: 8px; margin-bottom: 10px;">
+    </label><br>
+    <label><strong>Contact:</strong>
+        <input type="email" id="contact-input" placeholder="Email or contact info" style="width: 100%; padding: 8px; margin-bottom: 10px;">
+    </label><br>
+    <label><strong>License:</strong>
+        <input type="text" id="license-input" placeholder="e.g. CC-BY 4.0" style="width: 100%; padding: 8px; margin-bottom: 10px;">
+    </label>
+
+    <h2>Search and design your governance framework</h2>
+</div>
+  <div id="content"></div>
+  <footer>
+    <p>Authors: <strong>Lucia Sanchez-Gonzalez, Maria Poveda-Villalon, and Oscar Corcho</strong></p>
+    <p>Contact email: <a target="_blank" href="lu.sanchez@upm.es"><strong>lu.sanchez@upm.es</strong></a></p>
+    <p>License: <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License 2.0</a></p>
+    <p>How to cite: "Lucia Sanchez-Gonzalez, Maria Poveda-Villalon, and Oscar Corcho. Ontology Governance Framework and Design Tool. May 2025. Available at <a target="_blank" href="https://github.com/LuciaSG99/Ontology-governance-framework">GitHub</a></p>". DOI: ontology-framework</p
+  </footer>
+  <script>
+    const governanceModel = [
   {
     "principle_id": "P1",
     "principle_name": "P1 - Availability",
@@ -12,13 +157,12 @@
           {
             "guideline_id": "G1.1.1",
             "guideline_name": "G1.1.1 How to host your ontology?",
-            "guideline_text": "Choosing an platform or infrastructure to host and maintain the ontology files and its related assets (e.g., documentation, requirements) is a critical decision. This location is often the source from which publication platforms retrieve the ontology.\n\nRecommended hosting options include:\n\n- <strong>GitHub</strong>, GitLab: These platforms provide robust support for collaboration, version control, and integration with ontology engineering tools (e.g., Ontoology). They are particularly suitable for projects where change tracking and user interaction are key. The use of issues and pull requests allows direct interaction with the target users. Example: The <a href='https://github.com/edmcouncil/fibo' target='_blank'>Financial Industry Business Ontology (FIBO)</a> ontology is hosted and maintained on <a href='https://github.com/' target='_blank'>GitHub</a>.\n- <strong>Institutional servers</strong>: Commonly used when ontologies are developed and maintained internally by organizations or research projects with specific infrastructure needs. This option is more recommended if you want to focus more on the project that gives context to the ontologies. Example: The <a href='https://bimerr.iot.linkeddata.es/' target='_blank'>BIMERR</a> ontology network is hosted within a dedicated project infrastructure.\n- <strong>Ontology repositories and portals</strong>: Some ontology repositories not only serve as publication platforms but also support hosting. These platforms often support multiple knowledge representation languages and offer services like visualization, SPARQL endpoints, and APIs. This option allows you to have more visibility among the Ontology Engineering community and to have access to tools and services specially created to support the publication and use of these tools. Example: <a href='https://bioportal.bioontology.org/' target='_blank'>BioPortal</a> allows hosting and direct access to biomedical ontologies.\n\nWhen selecting a hosting option, please consider:\n\n- Collaboration and versioning needs.\n- Long-term accessibility and sustainability.\n- Integration with publication platforms and ontology engineering tools."
+            "guideline_text": "Choosing an platform or infrastructure to host and maintain the ontology files and its related assets (e.g., documentation, requirements) is a critical decision. This location is often the source from which publication platforms retrieve the ontology.\n\nRecommended hosting options include:\n\n- <a href='https://github.com/' target='_blank'><strong>GitHub</strong></a>, GitLab: These platforms provide robust support for collaboration, version control, and integration with ontology engineering tools (e.g., Ontoology). They are particularly suitable for projects where change tracking and user interaction are key. The use of issues and pull requests allows direct interaction with the target users. Example: The <a href='https://github.com/edmcouncil/fibo' target='_blank'>Financial Industry Business Ontology (FIBO)</a> ontology is hosted and maintained on <a href='https://github.com/' target='_blank'>GitHub</a>.\n- <strong>Institutional servers</strong>: Commonly used when ontologies are developed and maintained internally by organizations or research projects with specific infrastructure needs. This option is more recommended if you want to focus more on the project that gives context to the ontologies. Example: The <a href='https://bimerr.iot.linkeddata.es/' target='_blank'>BIMERR</a> ontology network is hosted within a dedicated project infrastructure.\n- <strong>Ontology repositories and portals</strong>: Some ontology repositories not only serve as publication platforms but also support hosting. These platforms often support multiple knowledge representation languages and offer services like visualization, SPARQL endpoints, and APIs. This option allows you to have more visibility among the Ontology Engineering community and to have access to tools and services specially created to support the publication and use of these tools. Example: <a href='https://bioportal.bioontology.org/' target='_blank'>BioPortal</a> allows hosting and direct access to biomedical ontologies.\n\nWhen selecting a hosting option, please consider:\n\n- Collaboration and versioning needs.\n- Long-term accessibility and sustainability.\n- Integration with publication platforms and ontology engineering tools."
           },
           {
             "guideline_id": "G1.1.2",
             "guideline_name": "G1.1.2 Where to publish your ontology?",
-            "guideline_text": "Where to publish your ontology?\n\nThe publication of an ontology refers to the action of making it discoverable and accessible to its intended users. Although in some cases the hosting and publication locations may coincide (e.g., a public <a href='https://github.com/' target='_blank'>GitHub</a> repository), the publication specifically addresses the external exposure of the ontology.\n\nCommon publication platforms options include:\n\n- <strong>Ontology repositories and catalogues</strong>: Platforms designed to promote the discoverability and reuse of ontologies. These include:\n\n   A) General-purpose: They do not focus on ontologies from a specific domain. Example:  <a href='https://lov.linkeddata.es/dataset/lov' target='_blank'>Linked Open Vocabularies (LOV)</a>.\n   B) Domain-specific: Focused on the publication of ontologies from a specific area of knowledge. Example: OntoPortal repositories such as <a href='https://bioportal.bioontology.org/' target='_blank'>BioPortal</a>, <a href='https://agroportal.lirmm.fr/' target='_blank'>AgroPortal</a>, <a href='https://ecoportal.lifewatch.eu/' target='_blank'>EcoPortal</a>, <a href='https://www.ebi.ac.uk/ols4/' target='_blank'>Ontology Lookup Service (OLS)</a> by EMBL-EBI\n- <strong>Project-specific web pages</strong>: Dedicated pages created within the context of specific projects to showcase ontology outputs and documentation.\n- <strong>General-purpose research data/software repositories</strong>: Platforms like Zenodo, which support long-term archiving and citation through DOIs.\n- <strong>Git repositories</strong> (as publication endpoint): Although they are mainly used for development and hosting, <a href='https://github.com/' target='_blank'>GitHub</a> or <a href='https://gitlab.com/' target='_blank'>GitLab</a> can also serve as public access points when adequately documented.\n\nWhen selecting a publication venue, consider:\n1. The intended use of the ontology\n2. The profile and needs of intenteded users\n3. The level of visibility and services required\n\nOntologies can be published in multiple platforms, however, it is necessary to assure that the ontology is updated and that the documentation remains synchronized across all of them."
-          },
+            "guideline_text": "Where to publish your ontology?\n\nThe publication of an ontology refers to the action of making it discoverable and accessible to its intended users. Although in some cases the hosting and publication locations may coincide (e.g., a public <a href='https://github.com/' target='_blank'>GitHub</a> repository), the publication specifically addresses the external exposure of the ontology.\n\nCommon publication platforms options include:\n\n- <strong>Ontology repositories and catalogues</strong>: Platforms designed to promote the discoverability and reuse of ontologies. These include:\n\n   A) General-purpose: They do not focus on ontologies from a specific domain. Example:  <a href='https://lov.linkeddata.es/dataset/lov' target='_blank'>Linked Open Vocabularies (LOV)</a>.\n   B) Domain-specific: Focused on the publication of ontologies from a specific area of knowledge. Example: OntoPortal repositories such as <a href='https://bioportal.bioontology.org/' target='_blank'>BioPortal</a>, <a href='https://agroportal.lirmm.fr/' target='_blank'>AgroPortal</a>, <a href='https://ecoportal.lifewatch.eu/' target='_blank'>EcoPortal</a>, <a href='https://www.ebi.ac.uk/ols4/' target='_blank'>Ontology Lookup Service (OLS)</a> by EMBL-EBI\n- <strong>Project-specific web pages</strong>: Dedicated pages created within the context of specific projects to showcase ontology outputs and documentation.\n- <strong>General-purpose research data/software repositories</strong>: Platforms like Zenodo, which support long-term archiving and citation through DOIs.\n- <strong>Git repositories</strong> (as publication endpoint): Although they are mainly used for development and hosting, <a href='https://github.com/' target='_blank'>GitHub</a> or <a href='https://gitlab.com/' target='_blank'>GitLab</a> can also serve as public access points when adequately documented.\n\nWhen selecting a publication venue, consider:\n1. The intended use of the ontology\n2. The profile and needs of intenteded users\n3. The level of visibility and services required\n\nOntologies can be published in multiple platforms, however, it is necessary to assure that the ontology is updated and that the documentation remains synchronized across all of them."          },
           {
             "guideline_id": "G1.1.3",
             "guideline_name": "G1.1.3 How to make your ontology accessible via its URI?",
@@ -82,14 +226,12 @@
           {
             "guideline_id": "G3.1.1",
             "guideline_name": "G3.1.1 Ontology-level metadata documentation",
-            "guideline_text": "There are well-known annotations properties used by the community to describe information mentioned in R1 - Embedded documentation:\n\n- Ontology name: a short name of the ontology. From RDF Schema Vocabulary <a href='http://www.w3.org/2000/01/rdf-schema#label' target='_blank'>rdfs:label</a> or from SKOS <a href='http://www.w3.org/2004/02/skos/core#prefLabel' target='_blank'>skos:prefLabel</a>\n- Ontology main namespace URI: From the VANN vocabulary <a href='http://purl.org/vocab/vann/preferredNamespaceUri' target='_blank'>vann:preferredNamespaceUri</a>\n- Ontology preferred prefix: From the VANN vocabulary <a href='http://purl.org/vocab/vann/preferredNamespacePrefix' target='_blank'>vann:preferredNamespacePrefix</a>\n- Ontology creator: From DCMI <a href='http://purl.org/dc/terms/creator' target='_blank'>dct:creator</a>\n- Ontology contributor: From DCMI <a href='http://purl.org/dc/terms/contributor' target='_blank'>dct:contributor</a>\n- License: From DCMI <a href='http://purl.org/dc/terms/license' target='_blank'>dct:license</a>\n- Version: From OWL <a href='http://www.w3.org/2002/07/owl#versionIRI' target='_blank'>owl:versionIRI</a>\n- Scope and description: From DCMI <a href='http://purl.org/dc/terms/abstract' target='_blank'>dct:abstract</a> and <a href='http://purl.org/dc/terms/description' target='_blank'>dct:description</a>\n\nThese annotations should be embedded in the ontology code file. More information about ontology metadata can be found at Principle 4 - Metadata.",
-            "example_turtle": "@prefix owl: <http://www.w3.org/2002/07/owl#> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix vann: <http://purl.org/vocab/vann/> .\n@prefix dct: <http://purl.org/dc/terms/> .\n\n<https://w3id.org/example> rdf:type owl:Ontology ;\n  rdfs:label \"Example Ontology Name\"@en ;\n  vann:preferredNamespaceUri <https://w3id.org/example#> ;\n  vann:preferredNamespacePrefix \"ex\" ;\n  dct:creator \"Author 1\",\n\t \"Author 2\" ;\n  dct:contributor \"Contributor 1\",\n\t \"Contributor 2\" ;\n  dct:license <https://creativecommons.org/licenses/by/4.0/> ;\n  owl:versionIRI <https://w3id.org/example/1.0.1> ;\n  dct:description \"This is the description of the ontology example.\"@en ."
+            "guideline_text": "There are well-known annotations properties used by the community to describe information mentioned in R1 - Embedded documentation:\n\n- Ontology name: a short name of the ontology. From RDF Schema Vocabulary <a href='http://www.w3.org/2000/01/rdf-schema#label' target='_blank'>rdfs:label</a> or from SKOS <a href='http://www.w3.org/2004/02/skos/core#prefLabel' target='_blank'>skos:prefLabel</a>\n- Ontology main namespace URI: From the VANN vocabulary <a href='http://purl.org/vocab/vann/preferredNamespaceUri' target='_blank'>vann:preferredNamespaceUri</a>\n- Ontology preferred prefix: From the VANN vocabulary <a href='http://purl.org/vocab/vann/preferredNamespacePrefix' target='_blank'>vann:preferredNamespacePrefix</a>\n- Ontology creator: From DCMI <a href='http://purl.org/dc/terms/creator' target='_blank'>dct:creator</a>\n- Ontology contributor: From DCMI <a href='http://purl.org/dc/terms/contributor' target='_blank'>dct:contributor</a>\n- License: From DCMI <a href='http://purl.org/dc/terms/license' target='_blank'>dct:license</a>\n- Version: From OWL <a href='http://www.w3.org/2002/07/owl#versionIRI' target='_blank'>owl:versionIRI</a>\n- Scope and description: From DCMI <a href='http://purl.org/dc/terms/abstract' target='_blank'>dct:abstract</a> and <a href='http://purl.org/dc/terms/description' target='_blank'>dct:description</a>\n\nThese annotations should be embedded in the ontology code file. More information about ontology metadata can be found at Principle 4 - Metadata.\n\nExample:\n\n<pre>\n@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .\n@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .\n@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .\n@prefix vann: &lt;http://purl.org/vocab/vann/&gt; .\n@prefix dct: &lt;http://purl.org/dc/terms/&gt; .\n\n&lt;https://w3id.org/example&gt; rdf:type owl:Ontology ;\n  rdfs:label \"Example Ontology Name\"@en ;\n  vann:preferredNamespaceUri &lt;https://w3id.org/example#&gt; ;\n  vann:preferredNamespacePrefix \"ex\" ;\n  dct:creator \"Author 1\",\n\t \"Author 2\" ;\n  dct:contributor \"Contributor 1\",\n\t \"Contributor 2\" ;\n  dct:license &lt;https://creativecommons.org/licenses/by/4.0/&gt; ;\n  owl:versionIRI &lt;https://w3id.org/example/1.0.1&gt; ;\n  dct:description \"This is the description of the ontology example.\"@en .\n</pre>"
           },
           {
             "guideline_id": "G3.1.2",
             "guideline_name": "G3.1.2 How can I described the ontology terms?",
-            "guideline_text": "Each individual element of an ontology should be understood by the user through its textual definition, which is also embedded in the ontology code. To do so, here are some recommedations:\n\n<strong>1. Use well-known annotations properties</strong>. There are three main properties that are highly used to defined terms:\n\n- From RDF Schema the annotation <a href='http://www.w3.org/2000/01/rdf-schema#label' target='_blank'>rdfs:label</a> or from SKOS <a href='http://www.w3.org/2004/02/skos/core#prefLabel' target='_blank'>skos:prefLabel</a> to indicate the human-readable version of the name of the term. Sometimes the label of the term can be different from its identifier (see more information in Principle 5 - Identifiers).  There are some cases in which the authors prefer to create their own property to label their terms. In this case, it is recommended to connect your labeling property to rdfs:label explicitly with the rdfs:subPropertyOf property.\n\n- From SKOS (Simple Knowledge Organization System) the property <a href='http://www.w3.org/2004/02/skos/core#definition' target='_blank'>skos:definition</a> to add the formal definition of the term.\n\n- From RDF Schema the annotation property <a href='http://www.w3.org/2000/01/rdf-schema#comment' target='_blank'>rdfs:comment</a> to add the formal definition of the term or other type of additional information.\n\nIn fact, both rdfs:comment and skos:definition can be used at the same time. In this case, normally skos:definition is used to add the formal definition of the term, and rdfs:comment is used to add additional information, e.g. an example where the term can be used. \n\n<strong>2. Reuse well-known sources.</strong>\n\nIf applicable, it is recommended to use already existing definitions from standard references for the definition such as terminologies, dictionaries, glossaries, ISO standards, etc. When applying this process, the original source should be indicated using the annotation from RDF Schema <a href='http://www.w3.org/2000/01/rdf-schema#isDefinedby' target='_blank'>rdfs:isDefinedBy</a>.\n\n** Note: For the annotation isDefinedBy it is recommended to add the link to the specific version of the ontology or vocabulary source. \n\n<strong>3. Clear, natural and simple text.</strong>\n\nLast but not least, it is important that the definition is well-written in natural language that is understood by domain experts and ontology users. The term's definition should be defined as simply and accurately as possible, trying to avoid circularity (using the term itself in the definition). \n\nExample of documenting a term called \"Protein\":\n\n<pre>\n@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .\n@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .\n@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .\n@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .\n@prefix ex: &lt;https://w3id.org/example&gt; .\n\nex:Protein rdf:type owl:Class ;\n    rdfs:label \"Protein\"@en ;\n    skos:definition \"Linear POLYPEPTIDES that are synthesized on RIBOSOMES and may be further modified, crosslinked, cleaved, or assembled into complex proteins with several subunits.\"@en ;\n    rdfs:comment \"Proteins play a central role in biological processes such as enzymatic catalysis, DNA replication, and cellular signaling.\"@en ;\n    rdfs:isDefinedBy &lt;https://meshb.nlm.nih.gov/record/ui?ui=D011506&gt; .\n</pre>",
-            "example_turtle": "@prefix owl: <http://www.w3.org/2002/07/owl#> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n@prefix ex: <https://w3id.org/example> .\n\nex:Protein rdf:type owl:Class ;\n    rdfs:label \"Protein\"@en ;\n    skos:definition \"Linear POLYPEPTIDES that are synthesized on RIBOSOMES and may be further modified, crosslinked, cleaved, or assembled into complex proteins with several subunits.\"@en ;\n    rdfs:comment \"Proteins play a central role in biological processes such as enzymatic catalysis, DNA replication, and cellular signaling.\"@en ;\n    rdfs:isDefinedBy <https://meshb.nlm.nih.gov/record/ui?ui=D011506> ."
+            "guideline_text": "Each individual element of an ontology should be understood by the user through its textual definition, which is also embedded in the ontology code. To do so, here are some recommedations:\n\n<strong>1. Use well-known annotations properties</strong>. There are three main properties that are highly used to defined terms:\n\n- From RDF Schema the annotation <a href='http://www.w3.org/2000/01/rdf-schema#label' target='_blank'>rdfs:label</a> or from SKOS <a href='http://www.w3.org/2004/02/skos/core#prefLabel' target='_blank'>skos:prefLabel</a> to indicate the human-readable version of the name of the term. Sometimes the label of the term can be different from its identifier (see more information in Principle 5 - Identifiers).  There are some cases in which the authors prefer to create their own property to label their terms. In this case, it is recommended to connect your labeling property to rdfs:label explicitly with the rdfs:subPropertyOf property.\n\n- From SKOS (Simple Knowledge Organization System) the property <a href='http://www.w3.org/2004/02/skos/core#definition' target='_blank'>skos:definition</a> to add the formal definition of the term.\n\n- From RDF Schema the annotation property <a href='http://www.w3.org/2000/01/rdf-schema#comment' target='_blank'>rdfs:comment</a> to add the formal definition of the term or other type of additional information.\n\nIn fact, both rdfs:comment and skos:definition can be used at the same time. In this case, normally skos:definition is used to add the formal definition of the term, and rdfs:comment is used to add additional information, e.g. an example where the term can be used. \n\n<strong>2. Reuse well-known sources.</strong>\n\nIf applicable, it is recommended to use already existing definitions from standard references for the definition such as terminologies, dictionaries, glossaries, ISO standards, etc. When applying this process, the original source should be indicated using the annotation from RDF Schema <a href='http://www.w3.org/2000/01/rdf-schema#isDefinedby' target='_blank'>rdfs:isDefinedBy</a>.\n\n** Note: For the annotation isDefinedBy it is recommended to add the link to the specific version of the ontology or vocabulary source. \n\n<strong>3. Clear, natural and simple text.</strong>\n\nLast but not least, it is important that the definition is well-written in natural language that is understood by domain experts and ontology users. The term's definition should be defined as simply and accurately as possible, trying to avoid circularity (using the term itself in the definition). \n\nExample of documenting a term called \"Protein\":\n\n<pre>\n@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .\n@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .\n@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .\n@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .\n@prefix ex: &lt;https://w3id.org/example&gt; .\n\nex:Protein rdf:type owl:Class ;\n    rdfs:label \"Protein\"@en ;\n    skos:definition \"Linear POLYPEPTIDES that are synthesized on RIBOSOMES and may be further modified, crosslinked, cleaved, or assembled into complex proteins with several subunits.\"@en ;\n    rdfs:comment \"Proteins play a central role in biological processes such as enzymatic catalysis, DNA replication, and cellular signaling.\"@en ;\n    rdfs:isDefinedBy &lt;https://meshb.nlm.nih.gov/record/ui?ui=D011506&gt; .\n</pre>"
           }
         ]
       },
@@ -203,9 +345,8 @@
           },
           {
             "guideline_id": "G6.1.2",
-            "guideline_name": "G6.1.2 How to reuse ontologies in practice",
-            "guideline_text": "Once you’ve identified a suitable ontology, there are two main approaches to reuse it in your own ontology:\n\nA) Hard reuse - The whole ontology is imported in your ontology. To do so, here are some points to take in mind:\n\n- If the ontology is in OWL, then the OWL construct owl:imports must be used with the IRI of the ontology.\n\n- Make sure to import a stable IRI, ideally a version-specific IRI to avoid unintended updates.\n\n- If you use the base IRI, be aware that updates in the original ontology will be reflected in yours.\n\nB) Soft reuse - Individual terms or collection of terms are reused but not the whole ontology:\n\n- The terms are referenced by reusing their IRIs. This allows more control and stability, as your ontology is not automatically affected by changes in the source ontology.\n\n- It is important to document the source of the reused terms using the annotation property rdfs:isDefinedBy to indicate the version IRI of the original ontology.",
-            "example_turtle": "Example of Hard reuse:\n\n@prefix owl: <http://www.w3.org/2002/07/owl#> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n\n<https://w3id.org/example> rdf:type owl:Ontology ;\n\towl:imports <http://w3id.org/example2> .\n\nExample of Soft reuse:\n\n@prefix owl: <http://www.w3.org/2002/07/owl#> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix ex: <https://w3id.org/example> .\n\n<http://purl.obolibrary.org/obo/SO_0000704> rdf:type owl:Class ;\n    rdfs:label \"Gene\"@en ;\n    rdfs:isDefinedBy <http://purl.obolibrary.org/obo/so.owl> ."
+            "guideline_name": "G6.1.2  How to reuse ontologies in practice",
+            "guideline_text": "Once you’ve identified a suitable ontology, there are two main approaches to reuse it in your own ontology:\n\nA) Hard reuse - The whole ontology is imported in your ontology. To do so, here are some points to take in mind: \n\n- If the ontology is in OWL, then the OWL construct owl:imports must be used with the IRI of the ontology. \n\n- Make sure to import a stable IRI, ideally a version-specific IRI to avoid unintended updates.\n\n- If you use the base IRI, be aware that updates in the original ontology will be reflected in yours.\n\nExample: \n\n@prefix owl: <http://www.w3.org/2002/07/owl#> .\n\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n\n<https://w3id.org/example> rdf:type owl:Ontology ;\n\n                                            owl:imports <http://w3id.org/example2> .\n\n\n\nB) Soft reuse - Individual terms or collection of terms are reused but no the whole ontology: \n\n- The terms are referenced by reusing their IRIs. This allows more control and stability, as your ontology is not automatically affected by changes in the source ontology.\n\n- It is important to document the source of the reused terms using the annotation property rdfs:isDefinedBy to indicate the version IRI of the original ontology. \n\nExample: \n\n@prefix owl: <http://www.w3.org/2002/07/owl#> .\n\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n\n@prefix ex: <https://w3id.org/example> . \n\n<http://purl.obolibrary.org/obo/SO_0000704>  rdf:type owl:Class ;\n\n                  rdfs:label \"Gene\"@en ;\n\n                  rdfs:isDefinedBy <http://purl.obolibrary.org/obo/so.owl> ."
           }
         ]
       }
@@ -329,4 +470,169 @@
       }
     ]
   }
-]
+];
+
+    function render() {
+      const container = document.getElementById("content");
+      governanceModel.forEach(principle => {
+        const pDiv = document.createElement("div");
+        pDiv.className = "principle";
+
+        const pHeader = document.createElement("div");
+        pHeader.className = "principle-header";
+        pHeader.innerHTML = `
+          <div class="checkbox-container">
+            <input type="checkbox">
+          </div>
+          <span>${principle.principle_name}</span>
+          <span class="arrow">▼</span>
+        `;
+
+        const pContent = document.createElement("div");
+        pContent.className = "principle-content";
+        pContent.innerHTML = `<p>${principle.text_principle}</p>`;
+
+        principle.requirements.forEach(req => {
+          const rDiv = document.createElement("div");
+          rDiv.className = "requirement";
+
+          const rHeader = document.createElement("div");
+          rHeader.className = "requirement-header";
+          rHeader.innerHTML = `
+            <div class="checkbox-container">
+              <input type="checkbox">
+            </div>
+            <span>${req.requirement_name}</span>
+            <span class="arrow">▼</span>
+          `;
+
+          const rContent = document.createElement("div");
+          rContent.className = "requirement-content";
+          rContent.innerHTML = `<p>${req.requirement_text}</p>`;
+
+          req.guidelines.forEach(g => {
+            const gDiv = document.createElement("div");
+            gDiv.className = "guideline";
+
+            const gHeader = document.createElement("div");
+            gHeader.className = "requirement-header";
+            gHeader.innerHTML = `
+              <div class="checkbox-container">
+                <input type="checkbox">
+              </div>
+              <span>${g.guideline_name}</span>
+              <span class="arrow">▼</span>
+            `;
+
+            const gContent = document.createElement("div");
+            gContent.className = "guideline-content";
+            gContent.innerHTML = `<p>${g.guideline_text}</p>`;
+
+            gDiv.appendChild(gHeader);
+            gDiv.appendChild(gContent);
+            rContent.appendChild(gDiv);
+          });
+
+          rDiv.appendChild(rHeader);
+          rDiv.appendChild(rContent);
+          pContent.appendChild(rDiv);
+        });
+
+        pDiv.appendChild(pHeader);
+        pDiv.appendChild(pContent);
+        container.appendChild(pDiv);
+      });
+
+      // Toggle behavior
+      document.querySelectorAll(".principle-header").forEach(header => {
+        header.addEventListener("click", function (e) {
+          if (e.target.tagName !== "INPUT") {
+            const content = this.nextElementSibling;
+            const arrow = this.querySelector(".arrow");
+            content.style.display = content.style.display === "block" ? "none" : "block";
+            arrow.classList.toggle("rotated");
+          }
+        });
+      });
+
+      document.querySelectorAll(".requirement-header").forEach(header => {
+        header.addEventListener("click", function (e) {
+          if (e.target.tagName !== "INPUT") {
+            const content = this.nextElementSibling;
+            const arrow = this.querySelector(".arrow");
+            content.style.display = content.style.display === "block" ? "none" : "block";
+            arrow.classList.toggle("rotated");
+          }
+        });
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", render);
+  </script>
+
+<!-- Export Button -->
+<div style="margin-top: 30px;">
+  <button onclick="exportToMarkdown()">Export to Markdown</button>
+  </div>
+
+  <!-- Function to collected the elements selected -->
+<script> 
+  function getSelectedContent() {
+    let output = "";
+    document.querySelectorAll('.principle').forEach(p => {
+      const pCheckbox = p.querySelector('.principle-header input[type=checkbox]');
+      if (pCheckbox.checked) {
+        output += `# ${p.querySelector('.principle-header span:nth-child(2)').innerText}\n\n`;
+        output += `${p.querySelector('.principle-content > p').innerText}\n\n`;
+        p.querySelectorAll('.requirement').forEach(r => {
+          const rCheckbox = r.querySelector('.requirement-header input[type=checkbox]');
+          if (rCheckbox.checked) {
+            output += `## ${r.querySelector('.requirement-header span:nth-child(2)').innerText}\n\n`;
+            output += `${r.querySelector('.requirement-content > p').innerText}\n\n`;
+            r.querySelectorAll('.guideline').forEach(g => {
+              const gCheckbox = g.querySelector('.requirement-header input[type=checkbox]');
+              if (gCheckbox.checked) {
+                output += `### ${g.querySelector('.requirement-header span:nth-child(2)').innerText}\n\n`;
+                output += `${g.querySelector('.guideline-content > p').innerText}\n\n`;
+              }
+            });
+          }
+        });
+      }
+    });
+    return output;
+  }
+
+  function exportToMarkdown() {
+    const projectName = document.getElementById("project-name-input").value.trim();
+    const description = document.getElementById("project-description-input").value.trim();
+    const version = document.getElementById("version-input").value.trim();
+    const authors = document.getElementById("authors-input").value.trim();
+    const ontologies = document.getElementById("ontologies-input").value.trim();
+    const organization = document.getElementById("organization-input").value.trim();
+    const contact = document.getElementById("contact-input").value.trim();
+    const license = document.getElementById("license-input").value.trim();
+
+    let metadata = `# Project Metadata\n\n`;
+    if (projectName) metadata += `**Project name:** ${projectName}\n\n`;
+    if (description) metadata += `**Description:** ${description}\n\n`;
+    if (version) metadata += `**Version:** ${version}\n\n`;
+    if (authors) metadata += `**Authors:** ${authors}\n\n`;
+    if (ontologies) metadata += `**Ontologies applied:** ${ontologies}\n\n`;
+    if (organization) metadata += `**Organization:** ${organization}\n\n`;
+    if (contact) metadata += `**Contact:** ${contact}\n\n`;
+    if (license) metadata += `**License:** ${license}\n\n`;
+
+    const content = getSelectedContent();
+    const finalText = metadata + content;
+
+    const blob = new Blob([finalText], { type: 'text/markdown' });
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.download = 'selected_governance_model.md';
+    link.click();
+  }
+</script>
+
+</body>
+</html>
