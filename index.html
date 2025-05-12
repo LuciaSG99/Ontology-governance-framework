@@ -136,11 +136,30 @@
     <h2>Search and design your governance framework</h2>
 </div>
   <div id="content"></div>
+  <!-- Export Button -->
+<div style="margin-top: 30px;">
+  <button onclick="exportToMarkdown()">Export to Markdown</button>
+  </div>
   <footer>
     <p>Authors: <strong>Lucia Sanchez-Gonzalez, Maria Poveda-Villalon, and Oscar Corcho</strong></p>
     <p>Contact email: <a target="_blank" href="lu.sanchez@upm.es"><strong>lu.sanchez@upm.es</strong></a></p>
     <p>License: <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License 2.0</a></p>
     <p>How to cite: Lucia Sanchez-Gonzalez, Maria Poveda-Villalon, and Oscar Corcho. Ontology Governance Framework and Design Tool. May 2025. Available at <a target="_blank" href="https://github.com/oeg-upm/Ontology-governance-framework">GitHub</a></p></p
+    <div class="column">
+            <a href="https://oeg.fi.upm.es/">
+                <img class="imgResponsive" src="https://raw.githubusercontent.com/oeg-upm/websiteFooterLogos/master/images/oeg.jpg" alt="">
+            </a>
+        </div>
+        <div class="column">
+            <a href="http://fi.upm.es/">
+                <img class="imgResponsive" src="https://raw.githubusercontent.com/oeg-upm/websiteFooterLogos/master/images/fiLogo.png" alt="">
+            </a>
+        </div>
+        <div class="column">
+            <a href="https://www.upm.es/">
+                <img class="imgResponsive" src="https://raw.githubusercontent.com/oeg-upm/websiteFooterLogos/master/images/upm.png" alt="">
+            </a>
+    </div>
   </footer>
   <script>
     const governanceModel = [
@@ -589,10 +608,6 @@
     document.addEventListener("DOMContentLoaded", render);
   </script>
 
-<!-- Export Button -->
-<div style="margin-top: 30px;">
-  <button onclick="exportToMarkdown()">Export to Markdown</button>
-  </div>
 
   <!-- Function to collected the elements selected -->
 <script> 
