@@ -69,6 +69,32 @@
     .rotated {
       transform: rotate(180deg);
     }
+    .row {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        }
+
+        .column {
+        display: flex;
+        flex-direction: column;
+        flex-basis: 100%;
+        padding: 10px;
+        align-items: center;
+        }
+        @media screen and (min-width: 800px) {
+        .column {
+            flex: 1
+        }
+        }
+        .imgResponsive{
+            width: 100%!important;
+            max-width: 150px!important;
+            height: auto!important;
+        } 
   </style>
 </head>
 <body>
@@ -145,20 +171,16 @@
     <p>Contact email: <a target="_blank" href="lu.sanchez@upm.es"><strong>lu.sanchez@upm.es</strong></a></p>
     <p>License: <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License 2.0</a></p>
     <p>How to cite: Lucia Sanchez-Gonzalez, Maria Poveda-Villalon, and Oscar Corcho. Ontology Governance Framework and Design Tool. May 2025. Available at <a target="_blank" href="https://github.com/oeg-upm/Ontology-governance-framework">GitHub</a></p></p
-    <div class="column">
-            <a href="https://oeg.fi.upm.es/">
-                <img class="imgResponsive" src="https://raw.githubusercontent.com/oeg-upm/websiteFooterLogos/master/images/oeg.jpg" alt="">
-            </a>
-        </div>
-        <div class="column">
-            <a href="http://fi.upm.es/">
-                <img class="imgResponsive" src="https://raw.githubusercontent.com/oeg-upm/websiteFooterLogos/master/images/fiLogo.png" alt="">
-            </a>
-        </div>
-        <div class="column">
-            <a href="https://www.upm.es/">
-                <img class="imgResponsive" src="https://raw.githubusercontent.com/oeg-upm/websiteFooterLogos/master/images/upm.png" alt="">
-            </a>
+    <div class="row">
+        <a href="https://oeg.fi.upm.es/">
+            <img class="imgResponsive" src="./images/oeg.jpg" alt="">
+        </a>      
+        <a href="http://fi.upm.es/">
+            <img class="imgResponsive" src="./images/fiLogo.png" alt="">
+        </a>
+        <a href="https://www.upm.es/">
+            <img class="imgResponsive" src="./images/upm.png" alt="">
+        </a>
     </div>
   </footer>
   <script>
