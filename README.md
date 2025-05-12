@@ -80,4 +80,4 @@ You are free to use, modify, and distribute the contents, provided that proper a
 ---
 ## How to cite this work
 
-Lucia Sanchez-Gonzalez, Maria Poveda-Villalon, and Oscar Corcho. Ontology Governance Framework and Design Tool. May 2025. Available at [GitHub](https://github.com/LuciaSG99/Ontology-governance-framework). DOI: ontology-framework
+Lucia Sanchez-Gonzalez, Maria Poveda-Villalon, and Oscar Corcho. Ontology Governance Framework and Design Tool. May 2025. Available at [GitHub](https://github.com/LuciaSG99/Ontology-governance-framework).
