@@ -1,4 +1,4 @@
-# Ontology Governance Interactive Viewer
+# Ontology Governance Framework Interactive Web
 
 ## Purpose and scope
 
